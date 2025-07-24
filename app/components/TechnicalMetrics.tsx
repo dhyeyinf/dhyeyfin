@@ -103,7 +103,7 @@ export default function TechnicalMetrics() {
                                 <h4 className="text-lg font-semibold text-gray-300">Leadership & Initiative</h4>
                                 <ul className="mt-2 space-y-2 text-gray-400">
                                     <li>• Support Team Member for the IIT Jodhpur Placement Cell</li>
-                                    <li>• Public Relation Assistant Head for Prometeo, IIT Jodhpur's tech fest</li>
+                                    <li>• Public Relation Assistant Head for Prometeo, IIT Jodhpur&apos;s tech fest</li>
                                     <li>• Emphasized reproducibility with parameterized scripts & documentation</li>
                                 </ul>
                             </motion.div>

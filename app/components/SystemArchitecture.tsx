@@ -1,7 +1,5 @@
 'use client';
-
 import { motion } from 'framer-motion';
-
 export default function SystemArchitecture() {
 	return (
 		<section className="py-20 px-4">
@@ -9,9 +7,21 @@ export default function SystemArchitecture() {
 				<motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-3xl font-bold mb-12 text-center">
 					Projects
 				</motion.h2>
-
 				<div className="grid grid-cols-1 gap-8">
 					{[
+						{
+							title: 'Scan Sequencer: Real-time Motion-Controlled Music',
+							description: 'Interactive web-based music sequencer that transforms camera movements into dynamic musical compositions using computer vision.',
+							details: [
+								'Implemented real-time computer vision pipeline processing 30-60 FPS with <50ms motion-to-sound latency.',
+								'Engineered pixel difference algorithms and Euclidean color distance calculations for motion detection.',
+								'Integrated P5.js and Tone.js to create a vertical keyboard mapping system with 3-octave frequency range.',
+								'Achieved privacy-first design with 100% local processing - no data transmission or storage.',
+								'Optimized performance to <25% CPU usage through pixel sampling and adaptive frame rate control.',
+							],
+							tech: ['P5.js', 'Tone.js', 'Web Audio API', 'Computer Vision', 'JavaScript'],
+							liveDemo: 'https://dhyeyinf.github.io/Real-time-Pixel-Synth/',
+						},
 						{
 							title: 'Github-MCP: Conversational GitHub Explorer',
 							description: 'Built a natural language interface leveraging the Model Context Protocol (MCP) to explore GitHub repositories conversationally.',
@@ -54,7 +64,19 @@ export default function SystemArchitecture() {
 							transition={{ delay: index * 0.2 }}
 							className="bg-gray-900/50 rounded-xl p-6 backdrop-blur-sm border border-gray-800"
 						>
-							<h3 className="text-2xl font-bold mb-4">{project.title}</h3>
+							<div className="flex justify-between items-start mb-4">
+								<h3 className="text-2xl font-bold">{project.title}</h3>
+								{project.liveDemo && (
+									<a
+										href={project.liveDemo}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="px-4 py-2 bg-blue-500/20 hover:bg-blue-500/30 rounded-lg border border-blue-500/40 text-blue-300 transition-all duration-200 text-sm font-medium"
+									>
+										Live Demo →
+									</a>
+								)}
+							</div>
 							<p className="text-gray-400 mb-6">{project.description}</p>
 							<div className="mb-6">
 								<h4 className="text-lg font-semibold mb-2">Key Achievements:</h4>
